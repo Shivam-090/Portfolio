@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from './extra/ThemeToggle';
 
 const navLinks = [
   { label: 'Projects',   href: '#projects' },

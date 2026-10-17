@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import LoadingScreen   from './components/LoadingScreen';
+import LoadingScreen   from './components/extra/LoadingScreen';
 import Navbar          from './components/Navbar';
 import Hero            from './components/Hero';
 import IntroStrip      from './components/IntroStrip';

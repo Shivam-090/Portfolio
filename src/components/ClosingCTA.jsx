@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import MagneticButton from './MagneticButton';
+import MagneticButton from './extra/MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
