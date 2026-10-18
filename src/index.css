@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* ───────────────────────────────────────────────
    Design Tokens — Light Mode (Default)
@@ -151,4 +152,14 @@ a, button, [role="button"], input[type="button"], input[type="submit"] {
   }
   a, button { cursor: auto; }
   .marquee-track, .marquee-track-reverse { animation: none !important; }
+}
+
+/* ───────────────────────────────────────────────
+   Hero Portrait — Light vs Black/Dark Theme
+   ─────────────────────────────────────────────── */
+html.dark .hero-portrait-light {
+  display: none !important;
+}
+html:not(.dark) .hero-portrait-dark {
+  display: none !important;
 }

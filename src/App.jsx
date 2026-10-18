@@ -3,8 +3,7 @@ import LoadingScreen   from './components/extra/LoadingScreen';
 import Navbar          from './components/Navbar';
 import Hero            from './components/Hero';
 import IntroStrip      from './components/IntroStrip';
-import FeaturedProject from './components/FeaturedProject';
-import ProjectsList    from './components/ProjectsList';
+import Projects        from './components/Projects';
 import HowIWork        from './components/HowIWork';
 import SkillsMarquee   from './components/SkillsMarquee';
 import Experience      from './components/Experience';
@@ -26,12 +25,11 @@ export default function App() {
       <main>
         <Hero loaded={loaded} />
         <IntroStrip />
-        <FeaturedProject />
-        <ProjectsList />
         <HowIWork />
         <SkillsMarquee />
         <Experience />
         <Education />
+        <Projects />
         <ClosingCTA />
       </main>
 

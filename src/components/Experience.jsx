@@ -55,7 +55,15 @@ export default function Experience() {
               <h3 className="font-display font-semibold text-lg md:text-xl mb-1">
                 {exp.role}
               </h3>
-              <p className="text-fg-muted text-sm mb-5">{exp.company}</p>
+              <p className="text-fg-muted text-sm mb-5 flex flex-wrap items-center gap-x-2 gap-y-1">
+                <span>{exp.company}</span>
+                {exp.location && (
+                  <>
+                    <span className="text-fg-subtle select-none">·</span>
+                    <span className="text-fg-subtle">{exp.location}</span>
+                  </>
+                )}
+              </p>
               <ul className="space-y-2.5">
                 {exp.highlights.map((h, j) => (
                   <li

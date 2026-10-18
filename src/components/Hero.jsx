@@ -121,15 +121,24 @@ export default function Hero({ loaded }) {
           </div>
         </div>
 
-        {/* ── Right Column: Portrait Photograph (Clean, static, no background color/shadow, no hover) ── */}
+        {/* ── Right Column: Portrait Photograph (Clean, static, theme-aware background) ── */}
         <div className="lg:col-span-6 flex items-center justify-center lg:justify-end order-1 lg:order-2">
           <div className="relative w-full max-w-md lg:max-w-none aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] max-h-[620px] overflow-hidden">
+            {/* Light theme portrait */}
             <img
               src="/IMG_20240516_170845.png"
               alt="Shivam (Frost)"
               fetchPriority="high"
               loading="eager"
-              className="w-full h-full object-cover object-[center_18%]"
+              className="hero-portrait-light w-full h-full object-cover object-[center_18%]"
+            />
+            {/* Black / Dark theme portrait with dark background */}
+            <img
+              src="/IMG_21240516_170845.png"
+              alt="Shivam (Frost)"
+              fetchPriority="high"
+              loading="eager"
+              className="hero-portrait-dark w-full h-full object-cover object-[center_18%]"
             />
           </div>
         </div>

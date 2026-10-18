@@ -1,5 +1,18 @@
 export const experience = [
   {
+    id: 'digital-yug',
+    role: 'Frontend Developer Intern',
+    company: 'Digital Yug Innovation',
+    location: 'Noida, Uttar Pradesh, India · On-site',
+    period: 'Jan 2026 – May 2026',
+    highlights: [
+      'Architected 4+ reusable component libraries (ShadCN UI + Tailwind CSS), cutting estimated UI build time by 40% across product teams.',
+      'Reduced production page load by ~30% through code-splitting, lazy loading, and React performance optimisation.',
+      'Integrated 6+ REST API endpoints end-to-end — from backend contract negotiation to live deployment — within 2-week agile sprints.',
+      'Delivered fully responsive, cross-browser UIs (Chrome, Firefox, Safari) across mobile, tablet, and desktop breakpoints.',
+    ],
+  },
+  {
     id: 'internpro',
     role: 'MERN Stack Developer Intern',
     company: 'InternPro',
@@ -28,7 +41,7 @@ export const education = [
     institution: 'AKTU, Lucknow',
     degree: 'B.Tech, Computer Science & Engineering',
     period: '2022 – 2026',
-    detail: 'CGPA: 7.4 / 10',
+    detail: 'CGPA: 7.4 / 10 · 76.39%',
   },
   {
     id: 'class-xii',
