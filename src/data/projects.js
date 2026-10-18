@@ -1,32 +1,34 @@
 export const projects = [
   {
-    id: 'ai-resume-screener',
-    name: 'AI-Powered Resume Screening System',
+    id: 'nexigos',
+    name: 'Nexigos',
     description:
-      'Full-stack AI/ML platform for automated resume scoring, grading, and actionable feedback from uploaded PDFs.',
+      'Enterprise digital agency web platform & headless CMS engineered with React 19, Three.js/WebGL 3D particle backgrounds, Node.js, Express, PostgreSQL, and Prisma ORM.',
     featuredDescription:
-      'A full-stack AI/ML platform for automated resume scoring, grading, and candidate feedback from uploaded PDFs. Features Groq Llama 3.3/4 Scout integration for rapid analysis and scanned-PDF OCR support, JD Advisor, Job Match engine, and an AI Resume Builder — architected with Python/FastAPI, PyMuPDF, async SQLAlchemy/SQLite, and React/TypeScript/Tailwind.',
-    tech: ['Python', 'FastAPI', 'React', 'TypeScript', 'Groq Llama 3.3', 'PyMuPDF', 'SQLAlchemy'],
-    github: 'https://github.com/Shivam-090',
+      'An enterprise-grade, full-stack digital agency web platform and headless content management suite engineered with React 19, Vite, Tailwind CSS v4, Three.js / WebGL, Node.js, Express, and PostgreSQL (via Prisma ORM). Features 15+ interactive 3D WebGL particle geometry engines, 7 dedicated service deep-dives, a Tiptap v3 WYSIWYG blog composer with SEO configuration, threaded visitor comments with moderation queues, dynamic single-source agency settings, and Cloudinary CDN media delivery.',
+    tech: ['React 19', 'Three.js / WebGL', 'Tailwind CSS v4', 'Node.js', 'Express', 'PostgreSQL', 'Prisma ORM', 'Tiptap v3', 'Cloudinary'],
+    github: null,
+    isPrivate: true,
+    images: ['/Nexigos.png', '/Nexigos1.png'],
     featured: true,
     highlights: [
       {
-        title: 'Groq Llama 3.3 & OCR',
-        badge: 'Sub-second AI',
-        desc: 'Instant resume parsing, section-by-section scoring, and scanned document extraction via PyMuPDF.',
-        codeSnippet: 'inference: groq llama-3.3 · async pipeline',
+        title: 'Interactive 3D WebGL Engines',
+        badge: 'Three.js & WebGL',
+        desc: '15+ bespoke mathematical particle geometry presets (Globe, Mesh, Torus, Waves) reacting dynamically to cursor movement and viewport scroll.',
+        codeSnippet: '3d: three.js + ogl particle shaders',
       },
       {
-        title: 'JD Match & Advisor',
-        badge: 'Semantic Match',
-        desc: 'Evaluates candidate fit against target job descriptions with keyword gap recommendations.',
-        codeSnippet: 'matcher: cosine similarity + LLM rubric',
+        title: 'Headless CMS & Tiptap Editor',
+        badge: 'WYSIWYG & SEO',
+        desc: 'Full headless content suite with Tiptap v3 composer, automated slug generation, Cloudinary CDN uploads, and threaded comment moderation.',
+        codeSnippet: 'cms: tiptap v3 · seo meta & moderation',
       },
       {
-        title: 'AI Resume Builder',
-        badge: 'Full Stack',
-        desc: 'Interactive guided editor generating ATS-optimized resumes with async persistence.',
-        codeSnippet: 'backend: FastAPI + async SQLAlchemy',
+        title: 'PostgreSQL & Prisma Architecture',
+        badge: 'Prisma ORM',
+        desc: 'Scalable Express REST API backed by PostgreSQL and Prisma ORM, featuring JWT-based RBAC, soft-delete safety, and multi-tier rate limiting.',
+        codeSnippet: 'db: postgresql + prisma orm 6 · rbac',
       },
     ],
   },
@@ -38,7 +40,8 @@ export const projects = [
     featuredDescription:
       'An enterprise-grade technical interview practice and AI learning platform built with React 19, Redux Toolkit, and an asynchronous FastAPI dual-microservice backend with MongoDB and python-socketio. PrepAI empowers software developers to practice role-specific technical and oral interviews, solve coding challenges in a live Monaco Editor, record verbal explanations via browser audio, and receive real-time evaluations and multi-turn tutoring powered by offline Ollama (Mistral) and OpenAI Whisper.',
     tech: ['React 19', 'FastAPI', 'Python', 'Ollama (Mistral)', 'OpenAI Whisper', 'Monaco Editor', 'Socket.IO', 'MongoDB (Motor)', 'Redux Toolkit'],
-    github: 'https://github.com/Shivam-090/PrepAI',
+    github: 'https://github.com/Shivam-090/AI-Interviewer',
+    images: ['/aiPrep.png', '/aiPrep1.png', '/aiPrep2.png'],
     featured: false,
     highlights: [
       {
@@ -62,33 +65,34 @@ export const projects = [
     ],
   },
   {
-    id: 'ai-blog',
-    name: 'Blog Website MERN',
+    id: 'wellnest',
+    name: 'WellNest AI',
     description:
-      'Full-stack MERN blogging platform featuring dual-role authentication (reader/writer), Google Gemini AI writing assistance, ImageKit CDN image hosting, and an author dashboard.',
+      'Empathetic, privacy-first mental wellness platform powered by a specialized local clinical LLM (maxwell1500/psycho:12b via Ollama), featuring CBT grounding companion chat, 20-dimension psychometric evaluation, and gamified streak progression.',
     featuredDescription:
-      'A full-stack blogging platform built with the MERN stack (React 19, Express 5, Node.js, MongoDB), featuring public blog discovery, reader engagement (likes, bookmarks, comments), role-based JWT authentication, ImageKit CDN media hosting, Google Gemini AI writing assistance, and an author dashboard for draft management and comment moderation.',
-    tech: ['React 19', 'Node.js', 'Express 5', 'MongoDB', 'Google Gemini', 'ImageKit', 'Tailwind CSS 4', 'Quill'],
-    github: 'https://github.com/Shivam-090/Blog-Website-MERN-',
+      'A modern student and personal wellness companion designed to support emotional balance, reduce academic anxiety, and track holistic growth with zero cloud data leaks. Built with React 19, Express, Node.js, and MongoDB, WellNest leverages a specialized local clinical intelligence model (maxwell1500/psycho:12b via Ollama) to deliver multi-turn CBT companion chat, a 20-dimension psychometric evaluator, dynamic StressMeter gauge, automatic midnight routine resets, and a 6-theme adaptive aesthetic engine.',
+    tech: ['React 19', 'Node.js', 'Express', 'MongoDB', 'Ollama (psycho:12b)', 'CBT AI Engine', 'Tailwind CSS', 'Vite', 'JWT Auth'],
+    github: 'https://github.com/Shivam-090/WellNest',
+    images: ['/wellNest.png', '/wellNest1.png', '/wellNest2.png'],
     featured: false,
     highlights: [
       {
-        title: 'Gemini AI Writing Engine',
-        badge: 'AI Assisted',
-        desc: 'In-dashboard generative AI writing assistance powered by Google Gemini via @google/genai.',
-        codeSnippet: 'ai: gemini api integration · content drafting',
+        title: 'Local Clinical AI (psycho:12b)',
+        badge: 'Local LLM',
+        desc: 'Therapeutic conversations with CBT grounding (4-4-4 Box Breathing, 5-4-3-2-1 Sensory) and zero cloud data leaks.',
+        codeSnippet: 'inference: ollama maxwell1500/psycho:12b',
       },
       {
-        title: 'Dual-Role JWT Auth',
-        badge: 'Auth & Security',
-        desc: 'Separate reader & writer access models with JWT tokens and protected middleware routes.',
-        codeSnippet: 'auth: role-based access · reader & writer',
+        title: '20-Dimension Psychometrics',
+        badge: 'Clinical Assessment',
+        desc: 'Multi-factor evaluation across physical, mental, and academic wellbeing with dynamic StressMeter gauge.',
+        codeSnippet: 'evaluator: 20-indicator clinical rubric',
       },
       {
-        title: 'ImageKit & Quill CMS',
-        badge: 'Rich Content',
-        desc: 'Cloud-hosted image uploads via Multer and ImageKit with rich-text formatting and comment moderation.',
-        codeSnippet: 'media: imagekit cdn + quill rich-text',
+        title: 'Path to Bloom & Routine Engine',
+        badge: 'Gamification',
+        desc: 'Streak-based milestone progression, automatic midnight habit resets, +25 XP rewards, and 6 adaptive themes.',
+        codeSnippet: 'engine: midnight reset · xp streak matrix',
       },
     ],
   },
@@ -101,6 +105,7 @@ export const projects = [
       'MERN-based reciprocal peer learning platform where users sign in with Google OAuth, build public skill profiles, discover relevant learners, and exchange knowledge. Features real-time 1-on-1 messaging via Socket.IO, Nodemailer meeting scheduling, post-session ratings/moderation, Cloudinary media handling, and production multi-container Docker deployment with Nginx and HAProxy load balancing.',
     tech: ['React 18', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO', 'Docker', 'HAProxy', 'Cloudinary', 'Nodemailer'],
     github: 'https://github.com/Shivam-090/Skill-Swap',
+    images: ['/skillSwap.png'],
     featured: false,
     highlights: [
       {
@@ -125,13 +130,14 @@ export const projects = [
   },
   {
     id: 'live-chat',
-    name: 'Live Chat Application',
+    name: 'DigiTalk — Live Chat Application',
     description:
       'Full-stack real-time communication platform built with Stream Chat & Stream Video SDKs, featuring 1-on-1 messaging, in-app video calling, friend discovery, and an admin moderation panel.',
     featuredDescription:
       'A full-stack real-time chat and video calling platform built with React 19, Express 5, Node.js, MongoDB, and Stream. Features secure JWT auth with HTTP-only cookies, social matching onboarding, real-time 1-on-1 direct messaging via Stream Chat, in-app video calling with Stream Video SDK, friend request workflows, user blocking/reporting, and an admin dashboard for user moderation and account management.',
     tech: ['React 19', 'Node.js', 'Express 5', 'MongoDB', 'Stream Chat SDK', 'Stream Video SDK', 'Zustand', 'React Query', 'Tailwind CSS 4'],
-    github: 'https://github.com/Shivam-090',
+    github: 'https://github.com/Shivam-090/DigiTalk',
+    images: ['/digiTalk.png', '/digiTalk1.png'],
     featured: false,
     highlights: [
       {
@@ -155,33 +161,34 @@ export const projects = [
     ],
   },
   {
-    id: 'wellnest',
-    name: 'WellNest AI',
+    id: 'ai-blog',
+    name: 'Blog Website MERN',
     description:
-      'Empathetic, privacy-first mental wellness platform powered by a specialized local clinical LLM (maxwell1500/psycho:12b via Ollama), featuring CBT grounding companion chat, 20-dimension psychometric evaluation, and gamified streak progression.',
+      'Full-stack MERN blogging platform featuring dual-role authentication (reader/writer), Google Gemini AI writing assistance, ImageKit CDN image hosting, and an author dashboard.',
     featuredDescription:
-      'A modern student and personal wellness companion designed to support emotional balance, reduce academic anxiety, and track holistic growth with zero cloud data leaks. Built with React 19, Express, Node.js, and MongoDB, WellNest leverages a specialized local clinical intelligence model (maxwell1500/psycho:12b via Ollama) to deliver multi-turn CBT companion chat, a 20-dimension psychometric evaluator, dynamic StressMeter gauge, automatic midnight routine resets, and a 6-theme adaptive aesthetic engine.',
-    tech: ['React 19', 'Node.js', 'Express', 'MongoDB', 'Ollama (psycho:12b)', 'CBT AI Engine', 'Tailwind CSS', 'Vite', 'JWT Auth'],
-    github: 'https://github.com/Shivam-090/WellNest',
+      'A full-stack blogging platform built with the MERN stack (React 19, Express 5, Node.js, MongoDB), featuring public blog discovery, reader engagement (likes, bookmarks, comments), role-based JWT authentication, ImageKit CDN media hosting, Google Gemini AI writing assistance, and an author dashboard for draft management and comment moderation.',
+    tech: ['React 19', 'Node.js', 'Express 5', 'MongoDB', 'Google Gemini', 'ImageKit', 'Tailwind CSS 4', 'Quill'],
+    github: 'https://github.com/Shivam-090/Blog-Website-MERN-',
+    images: ['/blog.png', '/blog1.png', '/blog2.png'],
     featured: false,
     highlights: [
       {
-        title: 'Local Clinical AI (psycho:12b)',
-        badge: 'Local LLM',
-        desc: 'Therapeutic conversations with CBT grounding (4-4-4 Box Breathing, 5-4-3-2-1 Sensory) and zero cloud data leaks.',
-        codeSnippet: 'inference: ollama maxwell1500/psycho:12b',
+        title: 'Gemini AI Writing Engine',
+        badge: 'AI Assisted',
+        desc: 'In-dashboard generative AI writing assistance powered by Google Gemini via @google/genai.',
+        codeSnippet: 'ai: gemini api integration · content drafting',
       },
       {
-        title: '20-Dimension Psychometrics',
-        badge: 'Clinical Assessment',
-        desc: 'Multi-factor evaluation across physical, mental, and academic wellbeing with dynamic StressMeter gauge.',
-        codeSnippet: 'evaluator: 20-indicator clinical rubric',
+        title: 'Dual-Role JWT Auth',
+        badge: 'Auth & Security',
+        desc: 'Separate reader & writer access models with JWT tokens and protected middleware routes.',
+        codeSnippet: 'auth: role-based access · reader & writer',
       },
       {
-        title: 'Path to Bloom & Routine Engine',
-        badge: 'Gamification',
-        desc: 'Streak-based milestone progression, automatic midnight habit resets, +25 XP rewards, and 6 adaptive themes.',
-        codeSnippet: 'engine: midnight reset · xp streak matrix',
+        title: 'ImageKit & Quill CMS',
+        badge: 'Rich Content',
+        desc: 'Cloud-hosted image uploads via Multer and ImageKit with rich-text formatting and comment moderation.',
+        codeSnippet: 'media: imagekit cdn + quill rich-text',
       },
     ],
   },

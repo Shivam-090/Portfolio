@@ -50,7 +50,7 @@ export default function Experience() {
             key={exp.id}
             className="exp-entry grid md:grid-cols-[260px_1fr] gap-3 md:gap-14"
           >
-            <p className="text-fg-subtle text-sm pt-1">{exp.period}</p>
+            <p className="text-fg-subtle text-xs font-mono tracking-wider pt-1">{exp.period}</p>
             <div>
               <h3 className="font-display font-semibold text-lg md:text-xl mb-1">
                 {exp.role}

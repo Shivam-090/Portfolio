@@ -35,14 +35,11 @@ export default function Education() {
   return (
     <section
       ref={ref}
-      id="about"
+      id="education"
       className="py-24 md:py-36 px-6 md:px-10 max-w-7xl mx-auto border-t border-border"
     >
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
         <div>
-          <p className="text-fg-subtle text-xs uppercase tracking-[0.2em] mb-4">
-            Academic Background &amp; Credentials
-          </p>
           <h2
             className="edu-heading font-display font-bold tracking-tight"
             style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3.5rem)' }}
@@ -94,7 +91,7 @@ export default function Education() {
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="p-5 rounded-xl border border-border/70 bg-bg-elevated/40 backdrop-blur-sm"
+              className="p-5 rounded-xl border border-border/70 bg-bg-elevated/40 backdrop-blur-sm hover:border-fg-muted/40 transition-colors duration-200"
             >
               <p className="text-fg-subtle text-xs font-mono mb-1">{cert.period}</p>
               <h4 className="text-sm font-semibold text-fg mb-1">{cert.title}</h4>

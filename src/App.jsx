@@ -10,6 +10,7 @@ import Experience      from './components/Experience';
 import Education       from './components/Education';
 import ClosingCTA      from './components/ClosingCTA';
 import Footer          from './components/Footer';
+import ScrollToTop     from './components/extra/ScrollToTop';
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -34,6 +35,8 @@ export default function App() {
       </main>
 
       <Footer />
+
+      <ScrollToTop />
     </>
   );
 }

@@ -56,9 +56,6 @@ export default function SkillsMarquee() {
 
       <div className="px-6 md:px-10 max-w-7xl mx-auto mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <p className="skills-sub text-fg-subtle text-xs uppercase tracking-[0.2em] mb-4">
-            Technical Arsenal
-          </p>
           <h2
             className="skills-heading font-display font-bold tracking-tight"
             style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3.5rem)' }}
@@ -130,7 +127,7 @@ export default function SkillsMarquee() {
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="text-xs px-2.5 py-1 rounded-lg border border-border/60 bg-bg/60 text-fg-muted font-medium hover:text-fg hover:border-border transition-colors"
+                    className="text-xs px-2.5 py-1 rounded-lg border border-border/60 bg-bg/60 text-fg-muted font-medium hover:text-fg hover:border-fg-muted/60 hover:bg-bg-elevated transition-all duration-200 select-none"
                   >
                     {item}
                   </span>

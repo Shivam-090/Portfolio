@@ -3,6 +3,8 @@ export const skills = [
   'TypeScript',
   'Python',
   'React.js',
+  'Next.js',
+  'React Native',
   'FastAPI',
   'Node.js',
   'Express.js',
@@ -18,6 +20,7 @@ export const skills = [
   'Prompt Engineering',
   'Ollama & Whisper',
   'Claude Code & Copilot',
+  'Postman',
   'Docker',
   'AWS',
   'CI/CD & Git',
@@ -32,7 +35,7 @@ export const skillCategories = [
   },
   {
     category: 'Frontend',
-    items: ['React.js', 'Redux', 'Context API', 'Tailwind CSS', 'ShadCN UI', 'React Native'],
+    items: ['React.js', 'Next.js', 'React Native', 'Redux', 'Context API', 'Tailwind CSS', 'ShadCN UI'],
   },
   {
     category: 'Backend & APIs',
@@ -44,10 +47,10 @@ export const skillCategories = [
   },
   {
     category: 'AI & Dev Tools',
-    items: ['Prompt Engineering', 'Generative AI', 'Groq LLM', 'Ollama', 'Whisper', 'Claude Code', 'GitHub Copilot', 'OpenAI Codex'],
+    items: ['Postman', 'Prompt Engineering', 'Generative AI', 'Groq LLM', 'Ollama', 'Whisper', 'Claude Code', 'GitHub Copilot'],
   },
   {
     category: 'Cloud & DevOps',
-    items: ['AWS', 'Docker', 'Git', 'GitHub', 'CI/CD', 'Postman'],
+    items: ['AWS', 'Docker', 'Git', 'GitHub', 'CI/CD'],
   },
 ];

@@ -45,8 +45,9 @@ html.dark {
   --color-border-hover: var(--color-border-hover-val);
   --color-accent:       var(--color-accent-val);
 
-  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 /* ───────────────────────────────────────────────
