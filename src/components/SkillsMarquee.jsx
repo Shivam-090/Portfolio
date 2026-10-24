@@ -52,7 +52,7 @@ export default function SkillsMarquee() {
       className="py-24 md:py-36 border-t border-border overflow-hidden relative"
     >
       {/* Background ambient accents */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[250px] bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[250px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="px-6 md:px-10 max-w-7xl mx-auto mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>

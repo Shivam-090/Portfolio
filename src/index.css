@@ -2,52 +2,54 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ───────────────────────────────────────────────
-   Design Tokens — Light Mode (Default)
+   Design Tokens — Light Mode (Clean Studio with Royal Blue)
    ─────────────────────────────────────────────── */
 :root {
-  --color-bg-val:           #fafafa;
-  --color-bg-elevated-val:  #ffffff;
-  --color-fg-val:           #0a0a0a;
-  --color-fg-muted-val:     #525252;
-  --color-fg-subtle-val:    #858585;
-  --color-border-val:       #e5e5e5;
-  --color-border-hover-val: #b3b3b3;
-  --color-accent-val:       #16a34a;
-  --scrollbar-track-val:    #fafafa;
-  --scrollbar-thumb-val:    #d4d4d4;
-  --scrollbar-hover-val:    #a3a3a3;
+  --color-bg-val: #f8fafc;
+  --color-bg-elevated-val: #ffffff;
+  --color-bg-card-val: #ffffff;
+  --color-fg-val: #09090b;
+  --color-fg-muted-val: #475569;
+  --color-fg-subtle-val: #64748b;
+  --color-border-val: #e2e8f0;
+  --color-border-hover-val: #cbd5e1;
+  --color-accent-val: #2563eb;
+  --scrollbar-track-val: #f8fafc;
+  --scrollbar-thumb-val: #cbd5e1;
+  --scrollbar-hover-val: #94a3b8;
 }
 
 /* ───────────────────────────────────────────────
-   Design Tokens — Dark Mode Override
+   Design Tokens — Dark Mode Override (OLED & Midnight Slate with Electric Blue)
    ─────────────────────────────────────────────── */
 html.dark {
-  --color-bg-val:           #0a0a0a;
-  --color-bg-elevated-val:  #141414;
-  --color-fg-val:           #f5f5f5;
-  --color-fg-muted-val:     #a3a3a3;
-  --color-fg-subtle-val:    #666666;
-  --color-border-val:       #202020;
-  --color-border-hover-val: #383838;
-  --color-accent-val:       #22c55e;
-  --scrollbar-track-val:    #0a0a0a;
-  --scrollbar-thumb-val:    #262626;
-  --scrollbar-hover-val:    #404040;
+  --color-bg-val: #080a11;
+  --color-bg-elevated-val: #0f1322;
+  --color-bg-card-val: #14192b;
+  --color-fg-val: #f8fafc;
+  --color-fg-muted-val: #94a3b8;
+  --color-fg-subtle-val: #64748b;
+  --color-border-val: #1e2640;
+  --color-border-hover-val: #2d385e;
+  --color-accent-val: #3b82f6;
+  --scrollbar-track-val: #080a11;
+  --scrollbar-thumb-val: #1e2640;
+  --scrollbar-hover-val: #2d385e;
 }
 
 @theme {
-  --color-bg:           var(--color-bg-val);
-  --color-bg-elevated:  var(--color-bg-elevated-val);
-  --color-fg:           var(--color-fg-val);
-  --color-fg-muted:     var(--color-fg-muted-val);
-  --color-fg-subtle:    var(--color-fg-subtle-val);
-  --color-border:       var(--color-border-val);
+  --color-bg: var(--color-bg-val);
+  --color-bg-elevated: var(--color-bg-elevated-val);
+  --color-fg: var(--color-fg-val);
+  --color-fg-muted: var(--color-fg-muted-val);
+  --color-fg-subtle: var(--color-fg-subtle-val);
+  --color-border: var(--color-border-val);
   --color-border-hover: var(--color-border-hover-val);
-  --color-accent:       var(--color-accent-val);
+  --color-accent: var(--color-accent-val);
 
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 /* ───────────────────────────────────────────────
@@ -69,7 +71,11 @@ body {
 }
 
 /* Ensure mouse pointer is always visible with pointer cursor on interactive elements */
-a, button, [role="button"], input[type="button"], input[type="submit"] {
+a,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"] {
   cursor: pointer;
 }
 
@@ -87,38 +93,68 @@ a, button, [role="button"], input[type="button"], input[type="submit"] {
 /* ───────────────────────────────────────────────
    Scrollbar — adaptive to theme
    ─────────────────────────────────────────────── */
-::-webkit-scrollbar       { width: 6px; }
-::-webkit-scrollbar-track { background: var(--scrollbar-track-val); }
-::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-val); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover-val); }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-val);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-val);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover-val);
+}
 
 /* Hide scrollbar utility */
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 /* ───────────────────────────────────────────────
    Marquee — infinite horizontal ticker
    ─────────────────────────────────────────────── */
 @keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-track {
   animation: marquee 45s linear infinite;
 }
+
 .marquee-track:hover {
   animation-play-state: paused;
 }
 
 @keyframes marquee-reverse {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .marquee-track-reverse {
   animation: marquee-reverse 45s linear infinite;
 }
+
 .marquee-track-reverse:hover {
   animation-play-state: paused;
 }
@@ -129,6 +165,7 @@ a, button, [role="button"], input[type="button"], input[type="submit"] {
 .nav-link {
   position: relative;
 }
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -139,6 +176,7 @@ a, button, [role="button"], input[type="button"], input[type="submit"] {
   background: currentColor;
   transition: width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
 .nav-link:hover::after {
   width: 100%;
 }
@@ -151,8 +189,16 @@ a, button, [role="button"], input[type="button"], input[type="submit"] {
     scroll-behavior: auto;
     cursor: auto;
   }
-  a, button { cursor: auto; }
-  .marquee-track, .marquee-track-reverse { animation: none !important; }
+
+  a,
+  button {
+    cursor: auto;
+  }
+
+  .marquee-track,
+  .marquee-track-reverse {
+    animation: none !important;
+  }
 }
 
 /* ───────────────────────────────────────────────
@@ -161,6 +207,7 @@ a, button, [role="button"], input[type="button"], input[type="submit"] {
 html.dark .hero-portrait-light {
   display: none !important;
 }
+
 html:not(.dark) .hero-portrait-dark {
   display: none !important;
 }

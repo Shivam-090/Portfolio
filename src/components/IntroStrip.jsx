@@ -96,7 +96,7 @@ export default function IntroStrip() {
               </div>
               <div className="pl-4 text-fg-muted">
                 <span>role:</span>{' '}
-                <span className="text-emerald-600 dark:text-emerald-400">&apos;Full Stack &amp; AI&apos;</span>,
+                <span className="text-blue-600 dark:text-blue-400">&apos;Full Stack &amp; AI&apos;</span>,
               </div>
               <div className="pl-4 text-fg-muted">
                 <span>stack:</span> [
@@ -110,7 +110,7 @@ export default function IntroStrip() {
               </div>
               <div className="pl-4 text-fg-muted">
                 <span>education:</span>{' '}
-                <span className="text-emerald-600 dark:text-emerald-400">&apos;AKTU CSE &apos;26&apos;</span>,
+                <span className="text-blue-600 dark:text-blue-400">&apos;AKTU CSE &apos;26&apos;</span>,
               </div>
               <div className="pl-4 text-fg-muted">
                 <span>shipping:</span>{' '}
@@ -121,8 +121,8 @@ export default function IntroStrip() {
 
             {/* Card footer / Live status */}
             <div className="mt-4 pt-3 border-t border-border/80 flex items-center justify-between text-[11px] font-mono text-fg-subtle">
-              <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="flex items-center gap-1.5 text-blue-600 dark:text-blue-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                 <span>available_to_hire</span>
               </span>
               <span>Faridabad, IN</span>

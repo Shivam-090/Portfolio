@@ -1,17 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Mail,
   Phone,
-  MapPin,
   Copy,
   Check,
   ArrowUpRight,
   Download,
   MessageCircle,
+  Clock,
+  Sparkles,
 } from 'lucide-react';
 
 export default function ClosingCTA() {
   const [copiedItem, setCopiedItem] = useState(null);
+  const [localTime, setLocalTime] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      try {
+        const options = {
+          timeZone: 'Asia/Kolkata',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true,
+        };
+        setLocalTime(new Intl.DateTimeFormat('en-US', options).format(new Date()));
+      } catch {
+        setLocalTime('IST (UTC+5:30)');
+      }
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const copyToClipboard = (text, itemKey) => {
     if (navigator?.clipboard?.writeText) {
@@ -24,57 +46,60 @@ export default function ClosingCTA() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 px-6 md:px-10 max-w-6xl mx-auto border-t border-border"
+      className="py-20 md:py-32 px-6 md:px-10 max-w-6xl mx-auto border-t border-border relative"
     >
       {/* ── Section Heading & Description ── */}
-      <div className="mb-10 text-left max-w-3xl">
-        <h2 className="font-display font-bold tracking-tight text-fg mb-3" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', lineHeight: 1.15 }}>
+      <div className="mb-12 text-left max-w-3xl">
+        <h2
+          className="font-display font-bold tracking-tight text-fg mb-4"
+          style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)', lineHeight: 1.12 }}
+        >
           Ready to build something real?
-          <span className="block text-fg-muted font-normal text-lg sm:text-2xl mt-1.5">
+          <span className="block text-fg-muted font-normal text-xl sm:text-2xl lg:text-3xl mt-2">
             Let&rsquo;s start a conversation.
           </span>
         </h2>
 
         <p className="text-fg-muted text-sm sm:text-base leading-relaxed max-w-2xl">
-          I&rsquo;m currently open to full-time engineering roles, freelance contracts, and AI-powered web applications. Whether you have an architecture question, an ambitious MVP, or a high-velocity engineering team looking for a full stack developer — reach out directly through any channel below:
+          I&rsquo;m currently open to full-time engineering roles, high-impact contracts, and AI-powered web applications. Whether you have an architecture question, an ambitious MVP, or a high-velocity team looking for a full stack engineer — get in touch directly:
         </p>
       </div>
 
-      {/* ── Main Contact Grid (Compact 2-Column) ── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      {/* ── Main Contact Grid (2-Column Cards) ── */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
         {/* Email Box */}
-        <div className="p-4 sm:p-5 rounded-xl border border-border bg-bg-elevated/40 hover:border-fg-muted/40 transition-colors flex flex-col justify-between gap-3">
+        <div className="p-6 sm:p-7 rounded-2xl border border-border/80 bg-bg-elevated/50 hover:border-accent/40 hover:bg-bg-elevated/80 transition-all duration-300 flex flex-col justify-between gap-5 shadow-sm group">
           <div className="flex items-start justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-bg border border-border flex items-center justify-center text-fg shrink-0">
-                <Mail className="w-4 h-4" />
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-xl bg-bg border border-border flex items-center justify-center text-fg group-hover:border-accent/40 group-hover:text-accent transition-colors shrink-0">
+                <Mail className="w-5 h-5" />
               </div>
               <div>
                 <p className="text-[11px] font-mono uppercase tracking-wider text-fg-subtle">
-                  Email
+                  Direct Email
                 </p>
                 <p className="text-base sm:text-lg font-semibold text-fg select-all break-all">
                   shivamu0900@gmail.com
                 </p>
               </div>
             </div>
-            <span className="text-[10px] font-mono uppercase text-fg-subtle border border-border px-1.5 py-0.5 rounded shrink-0">
+            <span className="text-[10px] font-mono uppercase text-accent border border-accent/30 bg-accent/10 px-2 py-0.5 rounded font-medium shrink-0">
               Primary
             </span>
           </div>
 
-          <div className="flex items-center gap-2 pt-2 border-t border-border/50">
+          <div className="flex items-center gap-2.5 pt-3 border-t border-border/50">
             <a
               href="mailto:shivamu0900@gmail.com"
-              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-bg bg-fg hover:bg-fg/90 transition-colors"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-accent hover:opacity-90 transition-all duration-200 shadow-xs hover:scale-[1.01] active:scale-[0.99]"
             >
-              <span>Send Email</span>
-              <ArrowUpRight className="w-3 h-3" />
+              <span>Compose Email</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
             <button
               onClick={() => copyToClipboard('shivamu0900@gmail.com', 'email')}
-              title="Copy Email"
-              className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium border border-border bg-bg hover:border-fg-muted text-fg transition-colors"
+              title="Copy Email Address"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-mono font-medium border border-border bg-bg hover:border-accent/50 text-fg transition-all duration-200 cursor-pointer"
             >
               {copiedItem === 'email' ? (
                 <>
@@ -83,7 +108,7 @@ export default function ClosingCTA() {
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5 text-fg-muted" />
+                  <Copy className="w-3.5 h-3.5 text-fg-subtle" />
                   <span className="text-[11px]">Copy</span>
                 </>
               )}
@@ -92,11 +117,11 @@ export default function ClosingCTA() {
         </div>
 
         {/* Phone / WhatsApp Box */}
-        <div className="p-4 sm:p-5 rounded-xl border border-border bg-bg-elevated/40 hover:border-fg-muted/40 transition-colors flex flex-col justify-between gap-3">
+        <div className="p-6 sm:p-7 rounded-2xl border border-border/80 bg-bg-elevated/50 hover:border-accent/40 hover:bg-bg-elevated/80 transition-all duration-300 flex flex-col justify-between gap-5 shadow-sm group">
           <div className="flex items-start justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-bg border border-border flex items-center justify-center text-fg shrink-0">
-                <Phone className="w-4 h-4" />
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-xl bg-bg border border-border flex items-center justify-center text-fg group-hover:border-accent/40 group-hover:text-accent transition-colors shrink-0">
+                <Phone className="w-5 h-5" />
               </div>
               <div>
                 <p className="text-[11px] font-mono uppercase tracking-wider text-fg-subtle">
@@ -107,31 +132,31 @@ export default function ClosingCTA() {
                 </p>
               </div>
             </div>
-            <span className="text-[10px] font-mono uppercase text-fg-subtle border border-border px-1.5 py-0.5 rounded shrink-0">
+            <span className="text-[10px] font-mono uppercase text-fg-subtle border border-border px-2 py-0.5 rounded shrink-0">
               Voice / Chat
             </span>
           </div>
 
-          <div className="flex items-center gap-2 pt-2 border-t border-border/50">
+          <div className="flex items-center gap-2.5 pt-3 border-t border-border/50">
             <a
               href="tel:+917210282783"
-              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-bg bg-fg hover:bg-fg/90 transition-colors"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-white bg-accent hover:opacity-90 transition-all duration-200 shadow-xs hover:scale-[1.01] active:scale-[0.99]"
             >
-              <span>Call</span>
+              <span>Call Now</span>
             </a>
             <a
               href="https://wa.me/917210282783?text=Hi%20Shivam,%20I%20saw%20your%20portfolio!"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-border bg-bg hover:border-fg-muted text-fg transition-colors"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium border border-border bg-bg hover:border-accent/50 text-fg transition-all duration-200"
             >
               <MessageCircle className="w-3.5 h-3.5 text-accent" />
               <span>WhatsApp</span>
             </a>
             <button
               onClick={() => copyToClipboard('+917210282783', 'phone')}
-              title="Copy Phone"
-              className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium border border-border bg-bg hover:border-fg-muted text-fg transition-colors"
+              title="Copy Phone Number"
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-mono font-medium border border-border bg-bg hover:border-accent/50 text-fg transition-all duration-200 cursor-pointer"
             >
               {copiedItem === 'phone' ? (
                 <>
@@ -140,7 +165,7 @@ export default function ClosingCTA() {
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5 text-fg-muted" />
+                  <Copy className="w-3.5 h-3.5 text-fg-subtle" />
                   <span className="text-[11px]">Copy</span>
                 </>
               )}
@@ -149,18 +174,19 @@ export default function ClosingCTA() {
         </div>
       </div>
 
-      {/* ── Secondary Details: Location, Socials, Resume (Single Row) ── */}
-      <div className="p-4 sm:p-5 rounded-xl border border-border bg-bg-elevated/40 flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* Location & availability */}
-        <div className="flex items-center gap-2.5 w-full md:w-auto">
-          <div className="w-9 h-9 rounded-lg bg-bg border border-border flex items-center justify-center text-fg shrink-0">
-            <MapPin className="w-4 h-4" />
+      {/* ── Secondary Details: Location, Live Timezone Clock, Socials, Resume ── */}
+      <div className="p-5 sm:p-6 rounded-2xl border border-border/80 bg-bg-elevated/40 flex flex-col md:flex-row items-center justify-between gap-5">
+        {/* Location & Live Timezone Clock */}
+        <div className="flex items-center gap-3 w-full md:w-auto">
+          <div className="w-10 h-10 rounded-xl bg-bg border border-border flex items-center justify-center text-accent shrink-0">
+            <Clock className="w-4 h-4 text-accent" />
           </div>
           <div>
             <p className="text-xs font-semibold text-fg flex items-center gap-2">
               <span>Faridabad, Haryana, India</span>
-              <span className="text-[10px] font-mono text-fg-subtle border border-border px-1.5 py-0.2 rounded">
-                IST (UTC+5:30)
+              <span className="text-[10px] font-mono text-accent border border-accent/30 bg-accent/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span>{localTime || 'IST (UTC+5:30)'}</span>
               </span>
             </p>
             <p className="text-[11px] text-fg-muted">
@@ -170,13 +196,13 @@ export default function ClosingCTA() {
         </div>
 
         {/* Links & Resume */}
-        <div className="flex flex-wrap items-center justify-start md:justify-end gap-2 w-full md:w-auto">
+        <div className="flex flex-wrap items-center justify-start md:justify-end gap-2.5 w-full md:w-auto">
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/shivam-kumar-090"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-bg hover:border-fg-muted text-xs font-medium text-fg-muted hover:text-fg transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-border bg-bg hover:border-accent/40 text-xs font-medium text-fg-muted hover:text-accent transition-all duration-200"
           >
             <svg className="w-3.5 h-3.5 fill-current text-[#0077b5]" viewBox="0 0 24 24">
               <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37z" />
@@ -190,7 +216,7 @@ export default function ClosingCTA() {
             href="https://github.com/Shivam-090"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-bg hover:border-fg-muted text-xs font-medium text-fg-muted hover:text-fg transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-border bg-bg hover:border-accent/40 text-xs font-medium text-fg-muted hover:text-accent transition-all duration-200"
           >
             <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
               <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
@@ -204,7 +230,7 @@ export default function ClosingCTA() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-bg bg-fg hover:bg-fg/90 transition-colors shadow-sm"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-accent hover:opacity-90 transition-all duration-200 shadow-xs"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Resume (PDF)</span>

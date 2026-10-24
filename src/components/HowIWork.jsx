@@ -76,10 +76,7 @@ export default function HowIWork() {
       {/* ── Section Header ── */}
       <div className="hiw-header mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-fg-subtle mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-            <span>Process &amp; Methodology</span>
-          </div>
+       
           <h2
             className="font-display font-bold tracking-tight text-fg"
             style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
@@ -99,21 +96,21 @@ export default function HowIWork() {
           return (
             <div
               key={step.number}
-              className="hiw-card flex flex-col justify-between p-7 sm:p-8 rounded-2xl border border-border bg-bg-elevated/40 hover:border-fg-muted/40 transition-all duration-300 group"
+              className="hiw-card flex flex-col justify-between p-7 sm:p-8 rounded-2xl border border-border bg-bg-elevated/40 hover:border-accent/40 hover:bg-bg-elevated/70 transition-all duration-300 group hover:-translate-y-1 shadow-2xs hover:shadow-lg"
             >
               <div>
                 {/* Top Row: Number & Icon */}
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-mono tracking-widest text-fg-subtle border border-border px-2 py-0.5 rounded">
+                  <span className="text-xs font-mono tracking-widest text-fg-subtle border border-border/80 bg-bg px-2.5 py-1 rounded-md">
                     {step.number} / {step.phase}
                   </span>
-                  <div className="w-10 h-10 rounded-xl bg-bg border border-border flex items-center justify-center text-fg group-hover:border-fg/40 transition-colors">
-                    <Icon className="w-5 h-5 text-fg-muted group-hover:text-fg transition-colors" />
+                  <div className="w-10 h-10 rounded-xl bg-bg border border-border flex items-center justify-center text-fg group-hover:border-accent/40 group-hover:bg-accent/10 transition-colors">
+                    <Icon className="w-5 h-5 text-fg-muted group-hover:text-accent transition-colors" />
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display font-bold text-2xl sm:text-3xl text-fg mb-3 tracking-tight">
+                <h3 className="font-display font-bold text-2xl sm:text-3xl text-fg mb-3 tracking-tight group-hover:text-fg transition-colors">
                   {step.title}
                 </h3>
 
@@ -128,7 +125,7 @@ export default function HowIWork() {
                 {step.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] font-mono px-2.5 py-1 rounded-md border border-border/80 bg-bg text-fg-subtle group-hover:text-fg-muted transition-colors"
+                    className="text-[11px] font-mono px-2.5 py-1 rounded-md border border-border/80 bg-bg text-fg-subtle group-hover:text-fg group-hover:border-border transition-colors"
                   >
                     {tag}
                   </span>
