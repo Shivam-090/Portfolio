@@ -50,14 +50,19 @@ export default function Projects() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.proj-header-elem', {
-        y: 30,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.7,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 82%' },
-      });
+      gsap.fromTo(
+        '.proj-header-elem',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.08,
+          duration: 0.7,
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 85%' },
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

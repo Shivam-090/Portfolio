@@ -11,22 +11,32 @@ export default function Education() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.edu-heading', {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 82%' },
-      });
+      gsap.fromTo(
+        '.edu-heading',
+        { y: 35, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: { trigger: ref.current, start: 'top 85%' },
+        }
+      );
 
-      gsap.from('.edu-card', {
-        y: 30,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.7,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: '.edu-cards-container', start: 'top 87%' },
-      });
+      gsap.fromTo(
+        '.edu-card',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.7,
+          ease: 'power2.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: { trigger: ref.current, start: 'top 82%' },
+        }
+      );
     }, ref);
 
     return () => ctx.revert();
@@ -64,11 +74,10 @@ export default function Education() {
         {education.map((edu, idx) => (
           <div
             key={edu.id}
-            className={`edu-card p-6 sm:p-7 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
-              idx === 0
-                ? 'border-accent/40 bg-gradient-to-b from-bg-elevated/90 to-bg-elevated/40 shadow-sm hover:border-accent/60'
-                : 'border-border/80 bg-bg-elevated/40 hover:border-accent/40 hover:bg-bg-elevated/70'
-            }`}
+            className={`edu-card p-6 sm:p-7 rounded-2xl border transition-[border-color,background-color,box-shadow] duration-300 flex flex-col justify-between ${idx === 0
+              ? 'border-accent/40 bg-gradient-to-b from-bg-elevated/90 to-bg-elevated/40 shadow-sm hover:border-accent/60'
+              : 'border-border/80 bg-bg-elevated/40 hover:border-accent/40 hover:bg-bg-elevated/70'
+              }`}
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-4">

@@ -11,22 +11,32 @@ export default function Experience() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.exp-heading', {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: ref.current, start: 'top 82%' },
-      });
+      gsap.fromTo(
+        '.exp-heading',
+        { y: 35, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: { trigger: ref.current, start: 'top 85%' },
+        }
+      );
 
-      gsap.from('.exp-card', {
-        y: 35,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 0.75,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: '.exp-timeline', start: 'top 85%' },
-      });
+      gsap.fromTo(
+        '.exp-card',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.12,
+          duration: 0.75,
+          ease: 'power2.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: { trigger: ref.current, start: 'top 80%' },
+        }
+      );
     }, ref);
 
     return () => ctx.revert();

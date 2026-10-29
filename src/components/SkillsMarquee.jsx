@@ -10,29 +10,31 @@ export default function SkillsMarquee() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.skills-heading', {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 82%' },
-      });
-      gsap.from('.skills-sub', {
-        y: 20,
-        opacity: 0,
-        duration: 0.7,
-        delay: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 82%' },
-      });
-      gsap.from('.skill-card', {
-        y: 30,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.6,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: '.skills-grid', start: 'top 88%' },
-      });
+      gsap.fromTo(
+        '.skills-heading',
+        { y: 35, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 85%' },
+        }
+      );
+      gsap.fromTo(
+        '.skill-card',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.08,
+          duration: 0.6,
+          ease: 'power2.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
+        }
+      );
     }, sectionRef);
     return () => ctx.revert();
   }, []);

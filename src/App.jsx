@@ -1,4 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LoadingScreen   from './components/extra/LoadingScreen';
 import Navbar          from './components/Navbar';
 import Hero            from './components/Hero';
@@ -12,9 +14,17 @@ import ClosingCTA      from './components/ClosingCTA';
 import Footer          from './components/Footer';
 import ScrollToTop     from './components/extra/ScrollToTop';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function App() {
   const [loaded, setLoaded] = useState(false);
-  const onLoadComplete = useCallback(() => setLoaded(true), []);
+  const onLoadComplete = useCallback(() => {
+    setLoaded(true);
+    // Recalculate ScrollTrigger offsets once the loading screen slides out and layout settles
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
+  }, []);
 
   return (
     <>
